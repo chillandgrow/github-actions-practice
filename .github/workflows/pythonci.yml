@@ -31,3 +31,7 @@ jobs:
 
       - name: Build image
         run:  docker build -t pythonv1 .
+
+      - name: Login to docker
+        run: |
+          echo "${{ secrets.GITHUB_PASSWORD}}" | docker login -u "${{ secrets.GITHUB_USERNAME}}" --password-stdin
