@@ -1,8 +1,8 @@
 name: Python Demo
 
 on:
-  pull-request: 
-    branch: main
+  pull_request: 
+    branches: main
 
 jobs:
   build:
@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: checkout code
-       uses: actions/checkout@v6
+      - name: checkout code
+        uses: actions/checkout@v6
 
-      -name: install python
-       uses: actions/setup-pyton@v5
-       with:
-         python-version:3.10
+      - name: install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
          
-      -name: Run python file
-       run: python app.py
+      - name: Run python file
+        run: python app.py
   
