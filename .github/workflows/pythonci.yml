@@ -30,8 +30,10 @@ jobs:
         run: pytest
 
       - name: Build image
-        run:  docker build -t pythonv1 .
+        run:  docker build -t sne16/github-actions-practice:v1 .
 
       - name: Login to docker
         run: |
           echo "${{ secrets.GITHUB_PASSWORD}}" | docker login -u "${{ secrets.GITHUB_USERNAME}}" --password-stdin
+      - name: Push docker image
+        run: docker push sne16/github-actions-practice:v1
